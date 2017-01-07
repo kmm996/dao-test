@@ -2,7 +2,7 @@
 FROM ubuntu:16.04
 MAINTAINER xiaofd <admin@chit.cf>
 
-RUN sed -i "s#archive.ubuntu.com#cn.archive.ubuntu.com#g" /etc/apt/sources.list
+RUN sed -i "s#archive.ubuntu.com#us.archive.ubuntu.com#g" /etc/apt/sources.list
 
 RUN apt-get update && \
 	apt-get clean  && \
@@ -17,9 +17,9 @@ RUN apt-get update && \
 
 #EXPOSE 22
 
-RUN sudo mkdir /usr/local/tonido && \
+RUN mkdir /usr/local/tonido && \
   cd /usr/local/tonido && \
-  sudo wget http://www.tonido.com/download.php?tonido64.tar.gz && \
+  wget http://www.tonido.com/download.php?tonido64.tar.gz && \
   mv download.php\?tonido64.tar.gz tonido64.tar.gz && \
   tar -zxvf tonido.tar.gz
 
