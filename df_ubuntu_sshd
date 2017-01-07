@@ -1,5 +1,5 @@
-# squid-net-speeder
-FROM ubuntu:16.10
+# ubuntu_sshd
+FROM ubuntu:16.04
 MAINTAINER xiaofd <admin@chit.cf>
 RUN apt-get update && \
 	apt-get clean  && \
