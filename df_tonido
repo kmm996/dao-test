@@ -1,6 +1,9 @@
 # tonido
 FROM ubuntu:16.04
 MAINTAINER xiaofd <admin@chit.cf>
+
+RUN sed -i "s#archive.ubuntu.com#cn.archive.ubuntu.com#g" /etc/apt/source.list
+
 RUN apt-get update && \
 	apt-get clean  && \
 	apt-get install -y wget  --no-install-recommends && \
