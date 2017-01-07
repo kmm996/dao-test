@@ -19,8 +19,8 @@ RUN apt-get update && \
 
 RUN mkdir /usr/local/tonido && \
   cd /usr/local/tonido && \
-  wget http://www.tonido.com/download.php?tonido64.tar.gz && \
-  mv download.php\?tonido64.tar.gz tonido64.tar.gz && \
+  wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
+#  mv download.php\?tonido64.tar.gz tonido.tar.gz && \
   tar -zxvf tonido.tar.gz
 
 CMD    ["./tonido.sh start", "-D"]
