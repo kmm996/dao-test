@@ -24,4 +24,4 @@ RUN mkdir /usr/local/tonido && \
   tar -zxvf tonido.tar.gz
 
 EXPOSE 80
-CMD    ["./tonido.sh start", "-D"]
+CMD    ["/usr/local/tonido/tonido.sh start", "-D"]
