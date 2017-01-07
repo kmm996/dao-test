@@ -17,11 +17,12 @@ RUN apt-get update && \
 
 #EXPOSE 22
 
-RUN mkdir /usr/local/tonido && \
-  cd /usr/local/tonido && \
+#RUN mkdir /usr/local/tonido && \
+RUN  cd /usr/local && \
   wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
 #  mv download.php\?tonido64.tar.gz tonido.tar.gz && \
-  tar -zxvf tonido.tar.gz
+  tar -zxvf tonido.tar.gz && \
+  rm tonido.tar.gz
 
 EXPOSE 80
 CMD    ["/usr/local/tonido/tonido.sh start", "-D"]
