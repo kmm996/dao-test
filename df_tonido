@@ -23,6 +23,9 @@ RUN  cd /usr/local && \
 #  mv download.php\?tonido64.tar.gz tonido.tar.gz && \
   tar -zxvf tonido.tar.gz && \
   rm tonido.tar.gz
+  ls -al && \
+  ls -al tonido && \
+  chmod +x ./tonido/tonido.sh
 
 EXPOSE 80
 CMD    ["/usr/local/tonido/tonido.sh start", "-D"]
