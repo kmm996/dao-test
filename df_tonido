@@ -23,4 +23,5 @@ RUN mkdir /usr/local/tonido && \
 #  mv download.php\?tonido64.tar.gz tonido.tar.gz && \
   tar -zxvf tonido.tar.gz
 
+EXPOSE 80
 CMD    ["./tonido.sh start", "-D"]
