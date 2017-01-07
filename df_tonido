@@ -27,4 +27,4 @@ RUN mkdir /usr/local/tonido && \
 #  chmod +x ./tonido.sh
 
 EXPOSE 80
-ENTRYPOINT    ["/usr/bin/nohup","/usr/local/tonido/tonido.sh","start","&"]
+ENTRYPOINT    ["/usr/local/tonido/tonido.sh","start","&&","tail","/usr/local/tonido/tonido.sh"]
