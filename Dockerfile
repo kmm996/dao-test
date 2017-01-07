@@ -3,7 +3,7 @@ FROM ubuntu:16.10
 MAINTAINER xiaofd <admin@chit.cf>
 RUN apt-get update && \
 	apt-get clean  && \
-	apt-get install openssh-server  && \
+	apt-get install -y openssh-server  && \
 	apt-get clean
 
 RUN echo 'root:root' | chpasswd
