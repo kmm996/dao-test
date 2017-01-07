@@ -27,4 +27,4 @@ RUN mkdir /usr/local/tonido && \
 #  chmod +x ./tonido.sh
 
 EXPOSE 80
-CMD    ["/usr/local/tonido/tonido.sh", "start -D"]
+CMD    ["/usr/local/tonido/tonido.sh start"]
