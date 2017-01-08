@@ -28,5 +28,5 @@ RUN mkdir /usr/local/tonido && \
   
 #RUN which tmux
 
-EXPOSE 80
+EXPOSE 10001
 CMD ["/usr/local/tonido/locrun.sh"]
