@@ -26,5 +26,8 @@ RUN mkdir /usr/local/tonido && \
   echo "/usr/local/tonido/tonido.sh start" >> locrun.sh && \
   chmod +x locrun.sh
 
+RUN /usr/local/tonido/tonido.sh start && \
+	cat /tmp/tonido_root.log
+	
 EXPOSE 10001
 ENTRYPOINT ["/usr/local/tonido/locrun.sh","&&","tail"]
