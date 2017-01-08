@@ -23,7 +23,8 @@ RUN mkdir /usr/local/tonido && \
   tar -zxvf tonido.tar.gz && \
   ls -al && \
   rm tonido.tar.gz && \
-  echo "nohup /usr/local/tonido/tonido.sh start" > locrun.sh
+  echo "nohup /usr/local/tonido/tonido.sh start" > locrun.sh && \
+  chmod +x locrun.sh
   
 #RUN which tmux
 
