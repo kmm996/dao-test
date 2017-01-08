@@ -4,10 +4,10 @@ MAINTAINER xiaofd <admin@chit.cf>
 
 RUN sed -i "s#archive.ubuntu.com#us.archive.ubuntu.com#g" /etc/apt/sources.list
 
-RUN apt-get update && \
-	apt-get clean  && \
-	apt-get install -y wget tmux  --no-install-recommends && \
-	apt-get clean && \
+RUN apt update && \
+	apt clean  && \
+	apt install -y wget tmux  --no-install-recommends && \
+	apt clean && \
 	rm -rf /var/lib/apt/lists/*
 	
 #RUN mkdir /var/run/sshd && \
@@ -20,12 +20,8 @@ RUN apt-get update && \
 RUN mkdir /usr/local/tonido && \
   cd /usr/local/tonido && \
   wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
-#  mv download.php\?tonido64.tar.gz tonido.tar.gz && \
   tar -zxvf tonido.tar.gz && \
   rm tonido.tar.gz
-#  ls -al && \
-#  chmod +x ./tonido.sh
 
 EXPOSE 80
-ENTRYPOINT    ["tmux","new-session /usr/local/tonido/tonido.sh start"]
-# -d
+ENTRYPOINT    ["tmux","new-session -d /usr/local/tonido/tonido.sh start"]
