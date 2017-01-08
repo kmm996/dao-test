@@ -9,24 +9,18 @@ RUN apt update && \
 	apt install -y wget tmux libjpeg8 libfontconfig1 --no-install-recommends && \
 	apt clean && \
 	rm -rf /var/lib/apt/lists/*
-	
-#RUN mkdir /var/run/sshd && \
-#	echo 'root:root' | chpasswd && \
-#	sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \ 
-#	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-#EXPOSE 22
 
 RUN mkdir /usr/local/tonido && \
-  cd /usr/local/tonido && \
-  wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
-  tar -zxvf tonido.tar.gz && \
-  rm tonido.tar.gz && \
-  echo "#!/bin/bash" > locrun.sh && \
+	cd /usr/local/tonido && \
+	wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
+	tar -zxvf tonido.tar.gz && \
+	rm tonido.tar.gz
+	
+RUN echo "#!/bin/bash" > locrun.sh && \
   echo "/usr/local/tonido/tonido.sh start" >> locrun.sh && \
   echo "top" >> locrun.sh && \
   chmod +x locrun.sh
-
 	
 EXPOSE 10001
-ENTRYPOINT ["/usr/local/tonido/locrun.sh"]
+#ENTRYPOINT ["/usr/local/tonido/locrun.sh"]
+ENTRYPOINT ["/usr/local/tonido/tonido.sh","start","&&","top"]
