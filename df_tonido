@@ -22,5 +22,5 @@ RUN echo "#!/bin/bash" > locrun.sh && \
   chmod +x locrun.sh
 	
 EXPOSE 10001
-#ENTRYPOINT ["/usr/local/tonido/locrun.sh"]
-ENTRYPOINT ["/usr/local/tonido/tonido.sh","start","&&","top"]
+
+ENTRYPOINT ["/usr/local/tonido/locrun.sh"]
