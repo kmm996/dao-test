@@ -22,7 +22,8 @@ RUN mkdir /usr/local/tonido && \
   wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
   tar -zxvf tonido.tar.gz && \
   rm tonido.tar.gz && \
-  echo "/usr/local/tonido/tonido.sh start" > locrun.sh && \
+  echo "#!/bin/bash" > locrun.sh && \
+  echo "/usr/local/tonido/tonido.sh start" >> locrun.sh && \
   echo "tail" >> locrun.sh && \
   chmod +x locrun.sh
 
