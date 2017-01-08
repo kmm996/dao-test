@@ -28,4 +28,4 @@ RUN mkdir /usr/local/tonido && \
   chmod +x locrun.sh
 
 EXPOSE 10001
-CMD ["/usr/local/tonido/locrun.sh"]
+ENTRYPOINT ["/usr/local/tonido/locrun.sh"]
