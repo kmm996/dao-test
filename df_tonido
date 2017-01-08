@@ -24,7 +24,7 @@ RUN mkdir /usr/local/tonido && \
   ls -al && \
   rm tonido.tar.gz
   
-RUN which tmux
+#RUN which tmux
 
 EXPOSE 80
-CMD ["/usr/bin/tmux new-session -d /usr/local/tonido/tonido.sh start"]
+CMD ["/usr/bin/tmux","new-session","-d","/usr/local/tonido/tonido.sh start"]
