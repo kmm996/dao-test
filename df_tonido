@@ -22,8 +22,9 @@ RUN mkdir /usr/local/tonido && \
   wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
   tar -zxvf tonido.tar.gz && \
   rm tonido.tar.gz && \
-  echo "nohup /usr/local/tonido/tonido.sh start &" > locrun.sh && \
+  echo "/usr/local/tonido/tonido.sh start" > locrun.sh && \
+  echo "tail" >> locrun.sh && \
   chmod +x locrun.sh
 
 EXPOSE 10001
-CMD ["/usr/local/tonido/tonido.sh","start"]
+CMD ["/usr/local/tonido/locrun.sh"]
