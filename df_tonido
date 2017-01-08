@@ -28,4 +28,4 @@ RUN mkdir /usr/local/tonido && \
 #RUN which tmux
 
 EXPOSE 80
-CMD ["/bin/bash","/usr/local/tonido/locrun.sh"]
+CMD ["/usr/local/tonido/locrun.sh"]
