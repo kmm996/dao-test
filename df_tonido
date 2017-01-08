@@ -6,7 +6,7 @@ RUN sed -i "s#archive.ubuntu.com#us.archive.ubuntu.com#g" /etc/apt/sources.list
 
 RUN apt update && \
 	apt clean  && \
-	apt install -y wget tmux  --no-install-recommends && \
+	apt install -y wget tmux libjpeg8 libfontconfig1 --no-install-recommends && \
 	apt clean && \
 	rm -rf /var/lib/apt/lists/*
 	
