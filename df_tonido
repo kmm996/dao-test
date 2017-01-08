@@ -16,10 +16,11 @@ RUN mkdir /usr/local/tonido && \
 	tar -zxvf tonido.tar.gz && \
 	rm tonido.tar.gz
 	
-RUN echo "#!/bin/bash" > locrun.sh && \
-  echo "/usr/local/tonido/tonido.sh start" >> locrun.sh && \
-  echo "top" >> locrun.sh && \
-  chmod +x locrun.sh
+RUN cd /usr/local/tonido && \
+	echo "#!/bin/bash" > locrun.sh && \
+ 	echo "/usr/local/tonido/tonido.sh start" >> locrun.sh && \
+	echo "top" >> locrun.sh && \
+	chmod +x locrun.sh
 	
 EXPOSE 10001
 
