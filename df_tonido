@@ -24,8 +24,7 @@ RUN mkdir /usr/local/tonido && \
   rm tonido.tar.gz && \
   echo "#!/bin/bash" > locrun.sh && \
   echo "/usr/local/tonido/tonido.sh start" >> locrun.sh && \
-  echo "tail" >> locrun.sh && \
   chmod +x locrun.sh
 
 EXPOSE 10001
-ENTRYPOINT ["/usr/local/tonido/locrun.sh"]
+ENTRYPOINT ["/usr/local/tonido/locrun.sh","&&","tail"]
