@@ -22,9 +22,10 @@ RUN mkdir /usr/local/tonido && \
   wget http://www.tonido.com/download.php?tonido64.tar.gz -O tonido.tar.gz && \
   tar -zxvf tonido.tar.gz && \
   ls -al && \
-  rm tonido.tar.gz
+  rm tonido.tar.gz && \
+  echo "nohup /usr/local/tonido/tonido.sh start" > locrun.sh
   
 #RUN which tmux
 
 EXPOSE 80
-#CMD ["/usr/bin/tmux","new-session","-d","/usr/local/tonido/tonido.sh start"]
+CMD ["/etc/bin/bash","/usr/local/tonido/locrun.sh.sh"]
