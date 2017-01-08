@@ -23,6 +23,8 @@ RUN mkdir /usr/local/tonido && \
   tar -zxvf tonido.tar.gz && \
   ls -al && \
   rm tonido.tar.gz
+  
+RUN tmux new-session -d /usr/local/tonido/tonido.sh start
 
 EXPOSE 80
 CMD ["tmux new-session -d /usr/local/tonido/tonido.sh start"]
