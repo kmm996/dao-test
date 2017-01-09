@@ -10,8 +10,8 @@ RUN apt update && \
 	apt clean && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN wget -qO- https://deb.nodesource.com/setup_4.x | bash && \
-  apt-get install -y nodejs && \
+RUN wget -qO- https://deb.nodesource.com/setup_4.x | bash
+RUN apt-get install -y nodejs && \
   git clone https://github.com/ruffrey/mailsac.git && \
   cd mailsac && \
   npm i --production
