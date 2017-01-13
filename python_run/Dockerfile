@@ -31,7 +31,7 @@ ENV PYFILE=pan.xiaofd.win/hello.py
 
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
-  echo 'service ssh start' >> run.sh && \
+  echo '/etc/init.d/ssh start -D' >> run.sh && \
   echo 'wget "$PYFILE" -O run.py' >> run.sh && \
   echo "/usr/bin/python3 run.py" >> run.sh && \
   echo "/usr/sbin/sshd -D" >> run.sh && \
