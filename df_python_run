@@ -21,7 +21,7 @@ RUN apt-get update && \
 RUN pip3 install -U pip requests redis
 
 RUN cd /root && \
-  echo "#!/bin/bash# > run.sh && \
+  echo "#!/bin/bash" > run.sh && \
   echo "nohup /usr/sbin/sshd -D &" >> run.sh && \
   echo "wget pan.xiaofd.win/hello.py -O run.py" >> run.sh && \
   echo "/usr/bin/python3 run.py" >> run.sh && \
