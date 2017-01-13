@@ -20,12 +20,12 @@ RUN apt-get update && \
   
 RUN pip3 install -U pip requests redis
 
-ENV pyfile pan.xiaofd.win/hello.py
+#ENV pyfile pan.xiaofd.win/hello.py
 
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
   echo "nohup /usr/sbin/sshd -D &" >> run.sh && \
-  echo "wget $pyfile -O run.py" >> run.sh && \
+  echo "wget ${PYFILE} -O run.py" >> run.sh && \
   echo "/usr/bin/python3 run.py" >> run.sh && \
   chmod +x run.sh
 
