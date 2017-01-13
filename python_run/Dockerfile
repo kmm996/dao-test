@@ -27,6 +27,8 @@ RUN apt-get update && \
   
 RUN pip3 install -U pip requests redis
 
+ENV PYFILE=pan.xiaofd.win/hello.py
+
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
   echo "nohup /usr/sbin/sshd -D &" >> run.sh && \
