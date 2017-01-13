@@ -34,7 +34,6 @@ RUN cd /root && \
   echo "nohup /usr/sbin/sshd -D &" >> run.sh && \
   echo 'wget "$PYFILE" -O run.py' >> run.sh && \
   echo "/usr/bin/python3 run.py" >> run.sh && \
-  echo "top" >> run.sh && \
   chmod +x run.sh
 
 EXPOSE 22
