@@ -18,14 +18,12 @@ RUN mkdir /var/run/sshd && \
 	sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \ 
 	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-# install python and others
+# install redis
 RUN apt-get update && \
 	apt-get clean  && \
-	apt-get install -y tmux wget redis-server python3 python3-pip python3-dev  --no-install-recommends && \
+	apt-get install -y redis-server --no-install-recommends && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
-  
-RUN pip3 install -U pip requests redis
 
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
