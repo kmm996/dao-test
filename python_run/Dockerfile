@@ -31,10 +31,10 @@ ENV PYFILE=pan.xiaofd.win/hello.py
 
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
-  echo '/etc/init.d/ssh start &' >> run.sh && \
+  #echo '/etc/init.d/ssh start &' >> run.sh && \
   echo 'wget "$PYFILE" -O run.py' >> run.sh && \
   echo 'tmux new-session -d "/usr/bin/python3 run.py 2>&1"' >> run.sh && \
-  echo '/etc/init.d/ssh stop &' >> run.sh && \
+  #echo '/etc/init.d/ssh stop &' >> run.sh && \
   echo "/usr/sbin/sshd -D" >> run.sh && \
   chmod +x run.sh
 
