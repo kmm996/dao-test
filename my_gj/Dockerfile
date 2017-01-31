@@ -12,9 +12,10 @@ RUN apt-get update \
 	&& apt-get autoremove \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN wget https://ftp.mozilla.org/pub/firefox/releases/45.0/linux-x86_64/en-US/firefox-45.0.tar.bz2 -O firefox.tar.bz2 \
+RUN wget https://ftp.mozilla.org/pub/firefox/releases/40.0/linux-x86_64/en-US/firefox-40.0.tar.bz2 -O firefox.tar.bz2 \
 	&& tar jxvf firefox.tar.bz2 -C /usr/lib \
-	&& ln -s /usr/lib/firefox/firefox /usr/bin/firefox
+	&& ln -s /usr/lib/firefox/firefox /usr/bin/firefox \
+	&& rm firefox.tar.bz2
 
 RUN sed "s|#\(.*multiverse\)|\1|g" /etc/apt/sources.list -i \
 	&& apt-get update \
