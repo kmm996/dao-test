@@ -33,7 +33,8 @@ ADD startup.sh ./
 ADD supervisord.conf ./
 ADD passwd ./
 
-RUN chmod 0600 passwd
+RUN chmod 0600 passwd \
+	&& chmod +x startup.sh
 
 EXPOSE 5900
 EXPOSE 22
