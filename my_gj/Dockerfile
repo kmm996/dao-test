@@ -8,10 +8,13 @@ RUN apt-get update \
 		openssh-server vim-tiny \
 		xfce4 xfce4-goodies \
 		x11vnc xvfb \
-		firefox \
 	&& apt-get autoclean \
 	&& apt-get autoremove \
 	&& rm -rf /var/lib/apt/lists/*
+
+RUN wget https://ftp.mozilla.org/pub/firefox/releases/46.0/linux-x86_64/en-US/firefox-46.0.tar.bz2 -O firefox.tar.bz2 \
+	&& tar jxvf firefox.tar.bz2 -C /usr/lib \
+	&& ln -s /usr/lib/firefox/firefox /usr/bin/firefox
 
 RUN sed "s|#\(.*multiverse\)|\1|g" /etc/apt/sources.list -i \
 	&& apt-get update \
