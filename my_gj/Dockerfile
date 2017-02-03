@@ -43,4 +43,5 @@ RUN chmod 0600 passwd \
 EXPOSE 5900
 EXPOSE 22
 
-ENTRYPOINT ["./startup.sh"]
+#ENTRYPOINT ["./startup.sh"]
+CMD ["./startup.sh"]

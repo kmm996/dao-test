@@ -8,3 +8,5 @@ mkdir -p /var/run/sshd
 
 # start a shell
 /bin/bash
+
+top
