@@ -12,11 +12,6 @@ RUN apt-get update \
 	&& apt-get autoremove \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN wget https://ftp.mozilla.org/pub/firefox/releases/40.0/linux-x86_64/en-US/firefox-40.0.tar.bz2 -O firefox.tar.bz2 \
-	&& tar jxvf firefox.tar.bz2 -C /usr/lib \
-	&& ln -s /usr/lib/firefox/firefox /usr/bin/firefox \
-	&& rm firefox.tar.bz2
-
 RUN sed "s|#\(.*multiverse\)|\1|g" /etc/apt/sources.list -i \
 	&& apt-get update \
 	&& apt-get install -y flashplugin-installer \
@@ -28,7 +23,7 @@ RUN mkdir -p '/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e9738
 	&& cd '/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}' \
 	&& wget https://www.ebesucher.com/data/firefoxaddon/latest.xpi -O 'jid1-GxlI1BHOBUCNhw@jetpack.xpi' \
 	&& chmod 0755 'jid1-GxlI1BHOBUCNhw@jetpack.xpi' \
-	&& wget https://addons.mozilla.org/firefox/downloads/latest/vagex-firefox-add-on/addon-321174-latest.xpi?src=dp-btn-primary -O 'ffaddon@vagex.com.xpi' \
+	&& wget http://vagex.com/vagex-1.0.6.xpi -O 'ffaddon@vagex.com.xpi' \
 	&& chmod 0755 'ffaddon@vagex.com.xpi'
 
 WORKDIR /root
