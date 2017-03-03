@@ -25,7 +25,7 @@ RUN apt-get update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
   
-RUN pip3 install -U pip requests redis requests_toolbelt
+RUN pip3 install -U pip requests redis requests_toolbelt chardet
 
 ENV PYFILE=xxx/hello.py
 ENV USERID=1@1
