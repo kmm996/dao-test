@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
-
+# desktop env
 RUN apt-get update \
 	&& apt-get install -y supervisor \
 		openssh-server vim-tiny \
@@ -11,25 +11,33 @@ RUN apt-get update \
 	&& apt-get autoclean \
 	&& apt-get autoremove \
 	&& rm -rf /var/lib/apt/lists/*
-
+# firefox	
+RUN apt-get update \
+	&& apt-get install -y firefox \
+	&& apt-get autoclean \
+	&& apt-get autoremove \
+	&& rm -rf /var/lib/apt/lists/*
+# firefox flash
 RUN sed "s|#\(.*multiverse\)|\1|g" /etc/apt/sources.list -i \
 	&& apt-get update \
 	&& apt-get install -y flashplugin-installer \
 	&& apt-get autoclean \
 	&& apt-get autoremove \
 	&& rm -rf /var/lib/apt/lists/*
-
-RUN wget https://ftp.mozilla.org/pub/firefox/releases/50.0/linux-x86_64/en-US/firefox-50.0.tar.bz2 -O firefox.tar.bz2 \
-	&& tar jxvf firefox.tar.bz2 -C /usr/lib \
-	&& ln -s /usr/lib/firefox/firefox /usr/bin/firefox \
-	&& rm firefox.tar.bz2
+# another firefox 
+#RUN wget https://ftp.mozilla.org/pub/firefox/releases/50.0/linux-x86_64/en-US/firefox-50.0.tar.bz2 -O firefox.tar.bz2 \
+#	&& tar jxvf firefox.tar.bz2 -C /usr/lib \
+#	&& ln -s /usr/lib/firefox/firefox /usr/bin/firefox \
+#	&& rm firefox.tar.bz2
 
 RUN mkdir -p '/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}' \
 	&& cd '/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}' \
 	&& wget https://www.ebesucher.com/data/firefoxaddon/latest.xpi -O 'jid1-GxlI1BHOBUCNhw@jetpack.xpi' \
 	&& chmod 0755 'jid1-GxlI1BHOBUCNhw@jetpack.xpi' \
 	&& wget http://vagex.com/vagex-1.0.6.xpi -O 'admin@vagex.com.xpi' \
-	&& chmod 0755 'admin@vagex.com.xpi'
+	&& chmod 0755 'admin@vagex.com.xpi' \
+	&& wget https://s3.amazonaws.com/com.alexa.toolbar/autoupdate/alxf/alxf-3.0.2.xpi -O 'alx-ffdeveloper@amazon.com' \
+	&& chmod 0755 'alx-ffdeveloper@amazon.com'
 
 WORKDIR /root
 
