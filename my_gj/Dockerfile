@@ -34,10 +34,10 @@ RUN mkdir -p '/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e9738
 	&& cd '/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}' \
 	&& wget https://www.ebesucher.com/data/firefoxaddon/latest.xpi -O 'jid1-GxlI1BHOBUCNhw@jetpack.xpi' \
 	&& chmod 0755 'jid1-GxlI1BHOBUCNhw@jetpack.xpi' \
-	&& wget http://vagex.com/vagex-1.0.6.xpi -O 'admin@vagex.com.xpi' \
-	&& chmod 0755 'admin@vagex.com.xpi' \
-	&& wget https://s3.amazonaws.com/com.alexa.toolbar/autoupdate/alxf/alxf-3.0.2.xpi -O 'alx-ffdeveloper@amazon.com' \
-	&& chmod 0755 'alx-ffdeveloper@amazon.com'
+	&& wget https://addons.cdn.mozilla.net/user-media/addons/774177/vagex-2.2.5-fx.xpi -O 'contact@vagex.com.xpi' \
+	&& chmod 0755 'contact@vagex.com.xpi' \
+	&& wget https://s3.amazonaws.com/com.alexa.toolbar/autoupdate/alxf/alxf-3.0.2.xpi -O 'alx-ffdeveloper@amazon.com.xpi' \
+	&& chmod 0755 'alx-ffdeveloper@amazon.com.xpi'
 
 WORKDIR /root
 
