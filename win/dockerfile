@@ -25,7 +25,7 @@ RUN vncserver \
     && vncserver -kill :1
     && chmod +x ~/.vnc/xstartup
 
-RUN echo 'qemu-system-x86_64 -hda kvm/winxp.img -m 512M -net nic,model=virtio -net user -redir tcp:3389::3389'  >>/root/.vnc/xstartup
+RUN echo 'qemu-system-x86_64 -hda winxp.img -m 512M -net nic,model=virtio -net user -redir tcp:3389::3389'  >>/root/.vnc/xstartup
   
 RUN wget https://www.freehao123.info/myvps/vncserver \
     && cp vncserver /etc/init.d/
