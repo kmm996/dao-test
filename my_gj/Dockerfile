@@ -14,7 +14,7 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 RUN pip3 install selenium shadowsocks ipython
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.15.0/geckodriver-v0.15.0-linux64.tar.gz -O geckodriver.tar.gz \
-	&& tar zxvj geckodriver.tar.gz \
+	&& tar zxvf geckodriver.tar.gz \
 	&& mv geckodriver /usr/bin
 # firefox	
 RUN apt-get update \
