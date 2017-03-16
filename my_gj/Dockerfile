@@ -1,16 +1,21 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
 # desktop env
 RUN apt-get update \
 	&& apt-get install -y supervisor \
-		openssh-server vim-tiny \
+		openssh-server vim \
 		xfce4 xfce4-goodies \
 		x11vnc xvfb \
+		python3-pip \
 	&& apt-get autoclean \
 	&& apt-get autoremove \
 	&& rm -rf /var/lib/apt/lists/*
+RUN pip3 install selenium shadowsocks ipython
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.15.0/geckodriver-v0.15.0-linux64.tar.gz -O geckodriver.tar.gz \
+	&& tar zxvj geckodriver.tar.gz \
+	&& mv geckodriver /usr/bin
 # firefox	
 RUN apt-get update \
 	&& apt-get install -y firefox \
