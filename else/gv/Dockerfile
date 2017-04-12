@@ -1,5 +1,5 @@
 FROM debian:7.6
-MAINTAINER jaz@live.in
+MAINTAINER jaz<jaz@live.in>
 
 RUN apt-get -q update 
 
