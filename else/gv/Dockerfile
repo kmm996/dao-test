@@ -1,4 +1,4 @@
-FROM debian:7.6
+FROM ubuntu:16.04
 MAINTAINER jaz<jaz@live.in>
 
 RUN apt-get -q update 
