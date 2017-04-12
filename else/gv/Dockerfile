@@ -17,7 +17,7 @@ RUN cd /root && \
     echo '	echo `date`' >> gv.sh && \
     echo '	sleep 0.5s' >> gv.sh  && \
     echo 'done' >> gv.sh && \
-    chmod +x run.sh
+    chmod +x gv.sh
 
 	
 CMD ["/root/gv.sh"]	  
