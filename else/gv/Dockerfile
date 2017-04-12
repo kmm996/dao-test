@@ -13,9 +13,9 @@ ENV curl=1
 
 RUN echo '	$curl' >> gv.sh
        
-RUN echo '	echo `date`
-        sleep 0.5s
-	done' >> gv.sh
+RUN echo '	echo `date`' >> gv.sh && \
+    echo '	sleep 0.5s' >> gv.sh  && \
+    echo 'done' >> gv.sh
 
 	
-CMD ["bash gv.sh"]	  
+CMD ["gv.sh"]	  
