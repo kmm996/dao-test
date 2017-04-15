@@ -17,4 +17,4 @@ RUN cd /root && \
     echo 'done' >> gv.sh && \
     chmod +x gv.sh
 	
-CMD ["/root/gv.sh"]	  
+ENTRYPOINT ["/root/gv.sh"]	  
