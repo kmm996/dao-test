@@ -8,7 +8,7 @@ RUN apt-get update && \
 ENV curl=1
 
 RUN cd /root && 
-    echo '#!/bin/sh' >> gv.sh && \
+    echo '#!/bin/bash' >> gv.sh && \
     echo 'for (( i=1; i>0; i++ ))' >> gv.sh  && \
     echo 'do' >> gv.sh && \ 
     echo '$curl' >> gv.sh && \
