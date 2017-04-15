@@ -17,4 +17,4 @@ RUN cd /root &&
     echo 'done' >> gv.sh && \
     chmod +x gv.sh
     
-CMD ["/root/gv.sh","/bin/bash"]	  
+CMD ["/root/gv.sh"]	  
