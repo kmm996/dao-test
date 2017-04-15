@@ -1,25 +1,20 @@
 FROM ubuntu:16.04
 MAINTAINER jaz<jaz@live.in>
 
-RUN apt-get  update 
+RUN apt-get update && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/
+
+ENV curl=1
 
 RUN cd /root && \
 #    echo '#!/bin/bash' >> gv.sh && \
     echo 'for (( i=1; i>0; i++ ))' >> gv.sh  && \
-    echo 'do' >> gv.sh
-    
-ENV curl=1
-
-
-RUN echo '$curl' >> gv.sh
-       
-RUN echo 'echo `date`' >> gv.sh && \
+    echo 'do' >> gv.sh && \ 
+    echo '$curl' >> gv.sh && \
+    echo 'echo `date`' >> gv.sh && \
     echo 'sleep 0.5s' >> gv.sh  && \
     echo 'done' >> gv.sh && \
-    
-    
-RUN chmod +x gv.sh
-    
-RUN /root/gv.sh
+    chmod +x gv.sh
 	
-CMD ["/bin/sh"]	  
+CMD ["/root/gv.sh"]	  
