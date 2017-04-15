@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER jaz<jaz@live.in>
 
-RUN apt-get update && \
+RUN apt-get update && 
     apt-get clean && \
     rm -rf /var/lib/apt/lists/
 
@@ -16,5 +16,5 @@ RUN cd /root &&
     echo 'sleep 0.5s' >> gv.sh  && \
     echo 'done' >> gv.sh && \
     chmod +x gv.sh
-	
-ENTRYPOINT ["/root/gv.sh"]	  
+    
+CMD ["/root/gv.sh"]	  
