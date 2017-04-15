@@ -16,8 +16,10 @@ RUN echo '$curl' >> gv.sh
 RUN echo 'echo `date`' >> gv.sh && \
     echo 'sleep 0.5s' >> gv.sh  && \
     echo 'done' >> gv.sh && \
-    chmod +x gv.sh
+    
+    
+RUN chmod +x gv.sh
     
 RUN /root/gv.sh
 	
-CMD ["/bin/bash"]	  
+CMD ["/bin/sh"]	  
