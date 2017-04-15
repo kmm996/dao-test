@@ -4,7 +4,7 @@ MAINTAINER jaz<jaz@live.in>
 RUN apt-get  update 
 
 RUN cd /root && \
-    echo '#!/bin/bash' >> gv.sh
+    echo '#!/bin/bash' >> gv.sh && \
     echo 'for (( i=1; i>0; i++ ))' >> gv.sh
 
 RUN echo 'do' >> gv.sh
