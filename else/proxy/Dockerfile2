@@ -1,0 +1,22 @@
+FROM kmm996/proxy
+MAINTAINER jaz <jaz@live.in>
+
+#ENV domain=https://jialezi.tk
+#ENV email=jaz@live.in
+ENV proxy=https://www.google.com
+
+RUN echo ":80 { " > /usr/local/caddy/Caddyfile && \
+
+#	echo "$domain  { " > /usr/local/caddy/Caddyfile && \
+	echo "gzip  " > /usr/local/caddy/Caddyfile && \
+#	echo "tls $email  " > /usr/local/caddy/Caddyfile && \
+	echo "proxy / $proxy  " > /usr/local/caddy/Caddyfile && \
+	echo "}" > /usr/local/caddy/Caddyfile
+	
+
+
+EXPOSE 80
+
+EXPOSE 443
+
+CMD ["service caddy start"]	
