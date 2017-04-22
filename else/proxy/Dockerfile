@@ -21,7 +21,7 @@ RUN echo ":80 { " > /usr/local/caddy/Caddyfile && \
 #	echo "tls $email  " > /usr/local/caddy/Caddyfile && \
 	echo "proxy / $proxy  " > /usr/local/caddy/Caddyfile && \
 	echo "}" > /usr/local/caddy/Caddyfile && \
-	service caddy restart
+	
 
 
 EXPOSE 80
