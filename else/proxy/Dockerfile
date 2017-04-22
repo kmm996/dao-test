@@ -20,14 +20,12 @@ RUN echo ":80 { " > /usr/local/caddy/Caddyfile && \
 	echo "gzip  " > /usr/local/caddy/Caddyfile && \
 #	echo "tls $email  " > /usr/local/caddy/Caddyfile && \
 	echo "proxy / $proxy  " > /usr/local/caddy/Caddyfile && \
-	echo "}" > /usr/local/caddy/Caddyfile
-	
-	
-RUN service caddy start
+	echo "}" > /usr/local/caddy/Caddyfile && \
+	service caddy restart
 
 
 EXPOSE 80
 
 EXPOSE 443
 
-CMD ["service caddy start"]	
+CMD ["service caddy restart"]	
