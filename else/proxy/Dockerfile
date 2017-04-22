@@ -30,4 +30,4 @@ EXPOSE 80
 
 EXPOSE 443
 
-ENTRYPOINT ["service caddy start"]	
+CMD ["/bin/bash"]	
