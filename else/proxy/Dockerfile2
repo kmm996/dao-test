@@ -19,4 +19,4 @@ EXPOSE 80
 
 EXPOSE 443
 
-CMD ["service caddy start"]	
+CMD ["/etc/init.d/caddy start"]	
