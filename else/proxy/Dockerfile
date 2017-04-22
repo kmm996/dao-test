@@ -26,4 +26,8 @@ RUN echo ":80 { " > /usr/local/caddy/Caddyfile && \
 RUN service caddy start
 
 
-CMD ["service caddy start"]	
+EXPOSE 80
+
+EXPOSE 443
+
+ENTRYPOINT ["service caddy start"]	
