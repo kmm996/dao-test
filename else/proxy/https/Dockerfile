@@ -17,4 +17,8 @@ RUN rm -rf /usr/local/caddy/Caddyfile && \
 	chmod +x /root/run.sh
 #       echo "nohup /usr/local/caddy/caddy  --conf=/usr/local/caddy/Caddyfile &>/tmp/caddy.log &" >> /root/run.sh && \
 
+EXPOSE 80
+EXPOSE 443
+
+
 CMD ["./root/run.sh"] 
