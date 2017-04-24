@@ -8,6 +8,7 @@ RUN apt-get update && \
 
 ENV curl=1
 
+ADD gv.sh /root
 RUN chmod +x /root/gv.sh
     
 CMD ["/root/gv.sh"]	  
