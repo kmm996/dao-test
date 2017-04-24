@@ -8,14 +8,6 @@ RUN apt-get update && \
 
 ENV curl=1
 
-RUN cd /root && \
-    echo '#!/bin/bash' >> gv.sh && \
-    echo 'for (( i=1; i>0; i++ ))' >> gv.sh  && \
-    echo 'do' >> gv.sh && \ 
-    echo '$curl' >> gv.sh && \
-    echo 'echo `date`' >> gv.sh && \
-    echo 'sleep 0.5s' >> gv.sh  && \
-    echo 'done' >> gv.sh && \
-    chmod +x gv.sh
+RUN chmod +x /root/gv.sh
     
 CMD ["/root/gv.sh"]	  
