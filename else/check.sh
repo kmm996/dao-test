@@ -1,4 +1,6 @@
 #!/bin/sh
+
+t=0
 while [ 1 ]
 do
   ps -fe|grep firefox |grep -v grep
@@ -10,6 +12,12 @@ do
   echo "firefox is running"
   fi
   sleep 30
- done
+  t=$(( $t+1 ))
+ 
+  if [ $t -gt 120 ]
+  then
+  killall -9 firefox
+  t=0
+  fi
+done
 #####
-
